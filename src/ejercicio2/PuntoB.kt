@@ -5,7 +5,7 @@ fun main() {
     val arreglo = arrayOfNulls<Int>(10)
     var auxiliar = 0
     for (i in 2..20 step 2){
-         arreglo[auxiliar] = i
+         arreglo[auxiliar] =i
         auxiliar++
      }
     //2. recorrer posiciones impares
