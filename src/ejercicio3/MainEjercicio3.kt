@@ -4,9 +4,7 @@ data class Producto(
     val cantidad: Int
 )
 
-fun valorTotal(producto: Producto): Double {
-    return producto.precio * producto.cantidad
-}
+fun Producto.valorTotal(): Double = precio * cantidad
 
 fun aplicarDescuento(
     producto: Producto,
@@ -23,7 +21,7 @@ fun List<Producto>.resumen(): String {
     resultado.append("Inventario (${this.size} productos):\n")
 
     this.forEach { producto ->
-        val totalProducto = valorTotal(producto)
+        val totalProducto = producto.valorTotal()
 
         resultado.append(
             "- ${producto.nombre}: ${producto.precio} x " +
@@ -39,11 +37,11 @@ fun List<Producto>.resumen(): String {
 }
 
 fun Producto.estaAgotado(): Boolean {
-    if(this.cantidad == 0){ 
+    if(cantidad == 0){
         return true
     }else{
         return false
-    } 
+    }
 }
 
 fun main() {
